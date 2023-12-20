@@ -49,3 +49,7 @@ resource "hcloud_load_balancer_service" "kubernetes-ingress-https" {
     retries  = 3
   }
 }
+
+output "kubernetes_load_balancer" {
+  value = "${hcloud_load_balancer.kubernetes.ipv4} & ${hcloud_load_balancer.kubernetes.ipv6}"
+}

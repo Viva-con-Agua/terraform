@@ -30,3 +30,7 @@ resource "hcloud_rdns" "monitoring-ipv6" {
   dns_ptr    = hcloud_server.monitoring.name
   ip_address = hcloud_server.monitoring.ipv6_address
 }
+
+output "monitoring_server" {
+  value = "${hcloud_server.monitoring.ipv4_address} & ${hcloud_server.monitoring.ipv6_address}"
+}
