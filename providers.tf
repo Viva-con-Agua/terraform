@@ -6,6 +6,10 @@ terraform {
       source  = "hetznercloud/hcloud"
       version = ">=1.44.1"
     }
+    dns = {
+      source  = "hashicorp/dns"
+      version = ">=3.0.0"
+    }
     template = {
       version = ">=2.0.0"
     }

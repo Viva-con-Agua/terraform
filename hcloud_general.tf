@@ -35,6 +35,16 @@ data "hcloud_image" "debian_arm" {
   most_recent       = true
 }
 
+data "dns_a_record_set" "backend_server" {
+  host = "backend.srv.vivaconagua.org"
+}
+data "dns_a_record_set" "live_server" {
+  host = "live.srv.vivaconagua.org"
+}
+data "dns_a_record_set" "production_server" {
+  host = "production.srv.vivaconagua.org"
+}
+
 resource "hcloud_ssh_key" "ftsell" {
   name       = "ftsell"
   public_key = file("${path.root}/resources/users/ftsell_id_rsa.pub")
