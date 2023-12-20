@@ -14,5 +14,4 @@ repos:
     rev: v1.85.0
     hooks:
       - id: terraform_fmt
-      - id: terraform_tflint
-      - id: terraform_tfsec
+      - id: terraform_trivy
