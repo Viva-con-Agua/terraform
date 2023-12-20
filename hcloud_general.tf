@@ -16,8 +16,8 @@ variable "offsite_location" {
 data "template_file" "cloud-init-config" {
   template = file("${path.root}/resources/cloud-config.yml")
   vars = {
-    ftsell_pubkey = file("${path.root}/resources/users/ftsell_id_rsa.pub")
-    ftsell_pwhash = file("${path.root}/resources/users/ftsell_pwhash.secret.txt")
+    ftsell_pubkey = trimspace(file("${path.root}/resources/users/ftsell_id_rsa.pub"))
+    ftsell_pwhash = trimspace(file("${path.root}/resources/users/ftsell_pwhash.secret.txt"))
   }
 }
 
